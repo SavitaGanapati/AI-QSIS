@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Jupyter checkpoints and notebook autosaves
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets.*
+*credentials*
+*token*
+
+# Generated AI-QSIS outputs and market data
+AI_QSIS_Output/
+output/
+outputs/
+reports/
+data/
+*.xlsx
+*.xls
+*.csv
+*.parquet
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Explicitly keep this documentation-only repository free of implementation files.
+# Review exceptions carefully before adding source files.
+*.py
+*.ipynb

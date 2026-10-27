@@ -1,0 +1,8 @@
+# Dependency names referenced/imported by the supplied AI-QSIS V8 notebook.
+# This file records dependencies only; it does not include or run the project code.
+yfinance
+nsepython
+pandas
+numpy
+openpyxl
+python-docx

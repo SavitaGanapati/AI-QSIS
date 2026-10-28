@@ -1,31 +1,19 @@
 # Data, Methodology, and Risk Notes
 
 ## Data quality
+Document the market-data provider, timestamp, reporting period, units, adjustment policy, and handling of missing or stale data for each field. The public screenshots alone do not establish every data-quality rule.
 
-- Confirm the timestamp and freshness of market data before interpreting a daily result.
-- Handle missing, stale, duplicated, or inconsistent records explicitly.
-- Verify symbol mappings and corporate-action adjustments.
-- Review provider terms, usage limits, and redistribution restrictions.
-
-## Directional-volume estimates
-
-The supplied notebook states that its data source's OHLCV fields do not provide true buyer-initiated versus seller-initiated volume. Its directional-volume indicators are estimates based on candle direction and closing-price location. They should not be described as exchange-confirmed order-flow data.
+## Directional volume
+Buy/sell-volume percentages derived from OHLCV candles should be treated as estimates unless verified trade-level aggressor-side data is used. Candle direction or close location does not prove the initiator of every trade.
 
 ## Scores and labels
+Scores are system-generated indicators. Do not call them probabilities, expected returns, or calibrated forecasts unless the methodology and validation support those interpretations. Record component definitions, score ranges, weights, thresholds, and treatment of missing inputs.
 
-Scores and labels are screening aids. They depend on the selected inputs, transformations, thresholds, and data availability. They should not be interpreted as calibrated probabilities or guaranteed forecasts unless separately tested and demonstrated.
+## Risk labels
+A system-assigned risk category is not a guarantee against loss. Document the rule or model that assigns each label and evaluate whether the labels correspond to realised outcomes.
 
-## Validation checklist
+## Validation
+Separate software/data validation from predictive validation. Software checks can test schemas, ranges, missing values, calculations, and file generation. Predictive claims require leakage-aware historical evaluation, preferably out-of-sample or walk-forward, and consideration of survivorship bias, corporate actions, liquidity, transaction costs, and realistic execution.
 
-- [ ] Check data coverage and missing values.
-- [ ] Verify calculations against independently computed examples.
-- [ ] Test edge cases such as zero volume, missing fundamentals, and short histories.
-- [ ] Check for look-ahead bias and leakage from future information.
-- [ ] Evaluate out-of-sample and walk-forward performance.
-- [ ] Include realistic fees, slippage, liquidity, and execution constraints in any backtest.
-- [ ] Compare with simple baselines.
-- [ ] Document known limitations and version changes.
-
-## Use disclaimer
-
-AI-QSIS is for research and educational purposes only and does not provide personalized financial advice. No score, ranking, or classification guarantees investment performance.
+## Investment-use boundary
+The project is a research and educational decision-support tool. It does not provide personalised investment advice or guarantee returns.

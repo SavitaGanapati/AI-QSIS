@@ -26,6 +26,8 @@ AI-QSIS is a Python-based quantitative stock research and screening project desi
 - [Business objective](#business-objective)
 - [Why the project matters](#why-the-project-matters)
 - [Current analytical views](#current-analytical-views)
+- [Explore every Excel workbook page](#explore-every-excel-workbook-page)
+- [Score methodology and validation](#score-methodology-and-validation)
 - [Output examples](#output-examples)
 - [How to read the scores](#how-to-read-the-scores)
 - [Conceptual architecture](#conceptual-architecture)
@@ -147,6 +149,37 @@ The primary view consolidates `Rank`, `Stock`, `Priority`, `FuturePotentialScore
 ![AI-QSIS primary long-term ranking output](assets/screenshots/05-primary-ranking.png)
 
 ---
+
+
+## Explore every Excel workbook page
+
+The workbook contains more views than can be explained fully in a single README section. Use the dedicated guides below for page-by-page descriptions, column families, interpretation notes, and implementation details that still require source verification.
+
+| Workbook view / topic | Detailed guide | What it explains |
+|---|---|---|
+| Full workbook index | [Excel Workbook Guide](docs/EXCEL_WORKBOOK_GUIDE.md) | Every supplied sheet name, its purpose, field interpretation, caveats, and cross-page glossary. |
+| All Stocks and candidate lists | [Stock Screening Pages](docs/STOCK_SCREENING_PAGES.md) | All Stocks, Emerging Growth, Breakout candidates, Reversal candidates, EOD candidates, Premarket Strength, and near-52-week-low views. |
+| Sector rotation and V8 opportunity views | [Sector Rotation and Opportunities](docs/SECTOR_ROTATION_AND_OPPORTUNITIES.md) | VB Sector Rotation, VB Booming, VB Best Sector Stocks, sector signals and additional V8 fields. |
+| Long-term scoring and scenarios | [Long-Term Growth and Ranking](docs/LONG_TERM_GROWTH_AND_RANKING.md) | LongTerm Ranking, growth features, FuturePotentialScore, risk labels and scenario fields. |
+| Validation and score interpretation | [Scoring and Validation](docs/SCORING_AND_VALIDATION.md) | What to verify for formulas, data quality, volume estimates, historical testing and release readiness. |
+
+### Workbook page families at a glance
+
+- **LongTerm Ranking:** concise ranked view with priority, long-term potential, growth, technical, valuation, risk and scenario fields.
+- **All Stocks:** the broad research table combining price range, momentum, volume, technical, fundamental, factor-score and narrative fields.
+- **Premarket Strength:** focused market-bias and factor-score view; the page name does not by itself prove all data is available before market open.
+- **Emerging Growth, Breakout_candidates, reversal candidates, and eod candidates:** candidate lists using the broad stock schema but intended for different research questions. Their exact selection rules must be verified from the implementation.
+- **VB Sector Rotation and VB Booming:** sector-level return, breadth, buying-related, volume and confirmation fields.
+- **VB Best Sector Stocks:** broad stock context plus sector score and V8 opportunity fields.
+- **Within 10% low, 5% low and 2% low:** near-52-week-low views; confirm the exact filter formula before interpreting membership.
+
+The same column headers across multiple tabs do not prove that the tabs use the same filters, thresholds, data timestamps or sorting logic. Each page should have its own verified selection-rule description.
+
+## Score methodology and validation
+
+AI-QSIS exposes raw metrics, derived indicators, component scores, composite scores, ranks, categories and narrative fields. These are different kinds of outputs and should be explained separately. Column names alone do not establish formulas, weights, thresholds or predictive validity. See the [Scoring and Validation guide](docs/SCORING_AND_VALIDATION.md) for the verification checklist.
+
+In particular, directional buy/sell volume fields derived from OHLCV candles should be described as estimates unless they use verified trade-level aggressor-side data. A successful Excel export demonstrates that reporting ran; it does not prove that the scores predict returns.
 
 ## How to read the scores
 

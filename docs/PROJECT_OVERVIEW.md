@@ -1,46 +1,17 @@
 # AI-QSIS Project Overview
 
 ## Purpose
+AI-QSIS is a Python-based stock-research and daily-screening project. Its demonstrated outputs include sector rotation, stock opportunities inside leading sectors, long-term potential, emerging-growth candidates, and a primary long-term ranking.
 
-AI-QSIS (Quantitative Stock Intelligence System) is intended to provide structured daily stock-research views and longer-term screening summaries.
+## Reporting perspectives
+- **Sector view:** compares sectors under the system's current daily rules.
+- **Stock opportunity view:** compares stock-level volume, buying-related, technical, potential, and risk fields.
+- **Long-term potential view:** presents growth-stage, revenue-acceleration, profitability-trajectory, technical, valuation, and risk fields.
+- **Emerging-growth view:** focuses on revenue, earnings, and margin-related indicators.
+- **Primary ranking:** consolidates ranking, priority, scores, risk labels, and narrative recommendations.
 
-## Functional areas described by the current notebook
+## Output artifacts
+The supplied run context identifies a dated Excel workbook and a long-term Word report. Example names are documented in the README. Generated outputs are excluded from the public documentation package.
 
-### 1. Market and sector view
-Ranks sectors and assigns a daily state intended to describe relative sector strength or weakness.
-
-### 2. Stock opportunity screening
-Ranks stocks associated with the sector view and presents technical and volume-derived indicators for additional review.
-
-### 3. Technical indicators
-The notebook includes calculations or use of indicators such as:
-- Relative Strength Index (RSI)
-- Moving averages
-- Moving Average Convergence Divergence (MACD)
-- Relative strength against a benchmark
-- Volume comparisons
-
-### 4. Long-term screening
-The notebook separates business/growth potential from entry timing and includes measures or labels related to:
-- Revenue and earnings growth
-- Growth acceleration
-- Profitability trajectory and margin expansion
-- Technical score
-- Valuation score
-- Growth stage and risk level
-- Long-term view and recommendation-style classification
-
-### 5. Outputs
-The notebook describes generating an Excel workbook and a Word report in an output directory. These generated artifacts are deliberately excluded from this documentation pack.
-
-## Data inputs and dependencies
-
-The notebook imports `nsepython`, `yfinance`, `pandas`, `numpy`, `openpyxl`, and `python-docx`. It describes using historical price data and company metrics. Data access and coverage depend on the relevant providers and available symbols.
-
-## Execution boundary
-
-This document is an architectural summary, not an implementation guide. It intentionally omits exact formulas, thresholds, ticker lists, internal functions, and source code.
-
-## Validation still required
-
-Before relying on the system for consequential decisions, independently validate data quality, score behavior, missing-data handling, look-ahead bias, survivorship bias, transaction costs, liquidity, slippage, and out-of-sample performance. No such validation is asserted by this overview.
+## Evidence and scope
+The report descriptions are based on supplied screenshots and project notes. The screenshots establish the existence and layout of those report views; they do not prove all formulas, validations, or predictive performance. Proposed enhancements are explicitly separated from demonstrated functionality.

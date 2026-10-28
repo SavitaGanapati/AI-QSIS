@@ -34,6 +34,7 @@ AI-QSIS is a Python-based quantitative stock research and screening project desi
 - [Daily processing workflow](#daily-processing-workflow)
 - [Output files](#output-files)
 - [Technology stack](#technology-stack)
+- [Public code walkthrough](#public-code-walkthrough)
 - [Data quality, validation and limitations](#data-quality-validation-and-limitations)
 - [How to run](#how-to-run)
 - [Public repository scope and intellectual property](#public-repository-scope-and-intellectual-property)
@@ -350,6 +351,15 @@ For a private local copy containing the implementation:
 The public documentation can explain the system's purpose and observed outputs, but it cannot reproduce the calculations without the withheld implementation and the required data access.
 
 ---
+
+## Public code walkthrough
+
+The repository includes a **Markdown-led Jupyter notebook** with small, safe Python examples. It demonstrates general patterns for data inspection, basic validation, sorting precomputed example scores and Excel export using synthetic data.
+
+- [Open the public code walkthrough notebook](notebooks/AI-QSIS_Public_Code_Walkthrough.ipynb)
+- [Read the code walkthrough notes](docs/CODE_WALKTHROUGH.md)
+
+The notebook is intentionally **not** the production notebook. It does not expose proprietary formulas, score weights, thresholds, exact stock-selection logic, private data collection, credentials or configuration. Synthetic symbols and values are used throughout. These snippets illustrate general engineering patterns; they should not be interpreted as the source implementation or as evidence of predictive performance.
 
 ## Public repository scope and intellectual property
 

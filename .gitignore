@@ -1,27 +1,18 @@
-# Python
+# Python source and notebooks (documentation-only public repository)
+*.py
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+*.ipynb
+!notebooks/AI-QSIS_Public_Code_Walkthrough.ipynb
+
+# Environments and secrets
 .venv/
 venv/
-env/
-
-# Jupyter checkpoints and notebook autosaves
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
-# Local configuration and secrets
 .env
 .env.*
 !.env.example
-secrets.*
-*credentials*
-*token*
 
-# Generated AI-QSIS outputs and market data
+# Generated outputs and local data
 AI_QSIS_Output/
 output/
 outputs/
@@ -30,21 +21,10 @@ data/
 *.xlsx
 *.xls
 *.csv
-*.parquet
+*.docx
 
-# Logs and temporary files
-*.log
-logs/
-tmp/
-temp/
-
-# OS/editor files
-.DS_Store
-Thumbs.db
+# Editor / operating system
 .vscode/
 .idea/
-
-# Explicitly keep this documentation-only repository free of implementation files.
-# Review exceptions carefully before adding source files.
-*.py
-*.ipynb
+.DS_Store
+Thumbs.db
